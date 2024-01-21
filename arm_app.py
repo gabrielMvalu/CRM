@@ -37,7 +37,7 @@ st.markdown(f"Your favorite command is **{favorite_command}** 🎈")
 
 
 chart_data = pd.DataFrame(
-   {"Variatia precipitatii per locatie": list(range(50)), "Seaca": np.random.randn(20), "Balasan": np.random.randn(20)}
+   {"Variatia precipitatii per locatie": list(range(20)), "Seaca": np.random.randn(20), "Balasan": np.random.randn(20)}
 )
 
 st.bar_chart(
