@@ -41,5 +41,5 @@ chart_data = pd.DataFrame(
 )
 
 st.bar_chart(
-   chart_data, x=favorite_command, y=["Seaca", "Balasan"], color=["#6fa8dc", "#7a5fcc"]  # Optional
+   chart_data, x=st.markdown(f"Your favorite command is **{favorite_command}** 🎈"), y=["Seaca", "Balasan"], color=["#6fa8dc", "#7a5fcc"]  # Optional
 )
