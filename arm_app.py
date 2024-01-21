@@ -1,5 +1,5 @@
 import streamlit as st
-from echarts import Echart, Legend, Line
+from pyecharts.charts import Line
 
 # Initialize the main components
 st.sidebar.header("Logo")
