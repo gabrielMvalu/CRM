@@ -1,6 +1,7 @@
-streamlit
 pandas
 openpyxl
 python-docx
 requests
 Pillow
+streamlit==1.10.0  # Replace with the version you are using
+pyecharts==1.9.0   # Replace with the version you are using
