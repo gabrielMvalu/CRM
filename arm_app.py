@@ -37,9 +37,9 @@ st.markdown(f"Your favorite command is **{favorite_command}** 🎈")
 
 
 chart_data = pd.DataFrame(
-   {"col1": list(range(20)), "col2": np.random.randn(20), "col3": np.random.randn(20)}
+   {"Bailesti": list(range(20)), "Seaca": np.random.randn(20), "Balasan": np.random.randn(20)}
 )
 
 st.bar_chart(
-   chart_data, x="col1", y=["col2", "col3"], color=["#FF0000", "#0000FF"]  # Optional
+   chart_data, x="Bailesti", y=["Seaca", "Balasan"], color=["#6fa8dc", "#7a5fcc"]  # Optional
 )
