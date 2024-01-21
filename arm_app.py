@@ -1,3 +1,4 @@
+
 import streamlit as st
 from PIL import Image
 import os
@@ -34,12 +35,12 @@ edited_df = st.data_editor(df, num_rows="dynamic")
 favorite_command = edited_df.loc[edited_df["rating"].idxmax()]["command"]
 st.markdown(f"Your favorite command is **{favorite_command}** 🎈")
 
-
-
 chart_data = pd.DataFrame(
    {"Variatia precipitatii per locatie": list(range(20)), "Seaca": np.random.randn(20), "Balasan": np.random.randn(20)}
 )
 
+# Utilizați o diagramă cu bare grouped pentru a compara "Seaca" și "Balasan" pe fiecare locație
 st.bar_chart(
-   chart_data, x=(f"Your favorite command is **{favorite_command}** 🎈"), y=["Seaca", "Balasan"], color=["#6fa8dc", "#7a5fcc"]  # Optional
+    chart_data.set_index("Variatia precipitatii per locatie")[["Seaca", "Balasan"]],
+    use_container_width=True
 )
