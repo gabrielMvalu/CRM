@@ -32,15 +32,17 @@ df = pd.DataFrame(
 )
 
 # Display the dataframe
-st.dataframe(df)
-
-# Create a bar chart based on the dataframe
-fig, ax = plt.subplots()
-df.plot(kind='bar', x='command', y='rating', ax=ax)
-ax.set_xlabel('Command')
-ax.set_ylabel('Rating')
-st.pyplot(fig)
-
+st.dataframe(df, )
 # Finding the command with the highest rating
 favorite_command = df.loc[df["rating"].idxmax()]["command"]
 st.markdown(f"Your favorite command is **{favorite_command}** 🎈")
+
+
+
+chart_data = pd.DataFrame(
+   {"col1": list(range(20)), "col2": np.random.randn(20), "col3": np.random.randn(20)}
+)
+
+st.bar_chart(
+   chart_data, x="col1", y=["col2", "col3"], color=["#FF0000", "#0000FF"]  # Optional
+)
