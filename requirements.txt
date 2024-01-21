@@ -6,3 +6,4 @@ Pillow==8.4.0
 streamlit==1.8.0
 pyecharts==1.9.0
 streamlit-echarts==2.0.0
+streamlit_echarts
