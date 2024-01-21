@@ -1,5 +1,7 @@
 import streamlit as st
 from pyecharts.charts import Line
+from pyecharts import options as opts
+
 
 # Initialize the main components
 st.sidebar.header("Logo")
