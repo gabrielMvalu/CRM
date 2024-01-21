@@ -1,19 +1,10 @@
 import streamlit as st
+from streamlit_echarts import st_pyecharts
 from pyecharts.charts import Line
 from pyecharts import options as opts
+from PIL import Image
 
-
-# Initialize the main components
-st.sidebar.header("Logo")
-st.sidebar.button("Page 1")
-st.sidebar.button("Page 2")
-st.sidebar.button("Page 3")
-
-st.sidebar.checkbox("Checkbox 01")
-st.sidebar.checkbox("Checkbox 02")
-st.sidebar.selectbox("ComboBox", options=["Option 1", "Option 2"])
-
- # Sidebar pentru încărcarea și afișarea logo-ului și textului
+# Sidebar for uploading and displaying logo and text
 st.sidebar.title("CRM predictii ors. Bailesti")
 logo_path = "LogoSTR.PNG"
 try:
@@ -25,28 +16,27 @@ except IOError:
 
 # Main panel with the app name and chart
 st.header("My_app_name")
-
-# Some placeholder text
 st.text("Some interesting text goes here describing your app.")
 
-# Chart placeholder
-chart_placeholder = st.empty()
-
 # Sample data for the chart
-data = {
-    'x': [0, 1, 2, 3, 4, 5],
-    'y1': [5, 20, 36, 10, 10, 20],
-    'y2': [15, 6, 45, 20, 35, 30]
-}
+x_data = [0, 1, 2, 3, 4, 5]
+y1_data = [5, 20, 36, 10, 10, 20]
+y2_data = [15, 6, 45, 20, 35, 30]
 
-# Create an Echart
-chart = Echart('Chart_name', 'simple line chart')
-chart.use(Line('y1', data['y1']))
-chart.use(Line('y2', data['y2']))
-chart.use(Legend(['y1', 'y2']))
+# Create an Echart line chart
+line_chart = (
+    Line()
+    .add_xaxis(x_data)
+    .add_yaxis("Series 1", y1_data)
+    .add_yaxis("Series 2", y2_data)
+    .set_global_opts(title_opts=opts.TitleOpts(title="Chart_name"))
+)
 
-# Display the chart
-chart_placeholder.chart(chart, height="300px")
+# Display the chart using Streamlit Echarts
+st_pyecharts(line_chart)
 
-# Download button (you'll need to implement the data downloading logic)
-st.download_button(label="Download Chart data", data="Your chart data here", file_name="chart_data.csv")
+# Data for download (example using CSV format)
+csv = 'Time,Series 1,Series 2\n'
+csv += '\n'.join([f"{x},{y1},{y2}" for x, y1, y2 in zip(x_data, y1_data, y2_data)])
+
+st.download_button(label="Download Chart data", data=csv, file_name="chart_data.csv", mime='text/csv')
