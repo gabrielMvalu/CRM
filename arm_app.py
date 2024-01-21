@@ -41,6 +41,6 @@ chart_data = pd.DataFrame(
 
 # Utilizați o diagramă cu bare grouped pentru a compara "Seaca" și "Balasan" pe fiecare locație
 st.bar_chart(
-    chart_data.set_index("Variatia precipitatii per locatie")[["Seaca", "Balasan"]],
+    chart_data.set_index("Variatia precipitatii per locatie")[["Your favorite command is **{favorite_command}** 🎈", "Balasan"]],
     use_container_width=True
 )
