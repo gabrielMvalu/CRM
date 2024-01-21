@@ -12,7 +12,7 @@ st.sidebar.checkbox("Checkbox 02")
 st.sidebar.selectbox("ComboBox", options=["Option 1", "Option 2"])
 
  # Sidebar pentru încărcarea și afișarea logo-ului și textului
-st.sidebar.title("Încărcarea Documentelor")
+st.sidebar.title("CRM predictii ors. Bailesti")
 logo_path = "LogoSTR.PNG"
 try:
     logo = Image.open(logo_path)
