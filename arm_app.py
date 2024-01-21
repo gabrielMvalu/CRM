@@ -32,9 +32,10 @@ df = pd.DataFrame(
 )
 
 # Display the dataframe
-st.dataframe(df, )
+st.dataframe(df, num_rows="dynamic")
 # Finding the command with the highest rating
 favorite_command = df.loc[df["rating"].idxmax()]["command"]
+
 st.markdown(f"Your favorite command is **{favorite_command}** 🎈")
 
 
