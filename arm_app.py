@@ -31,11 +31,12 @@ df = pd.DataFrame(
 )
 edited_df = st.data_editor(df, num_rows="dynamic")
 
+favorite_command1 = edited_df.loc[edited_df["rating"].idxmin()]["command"]
 favorite_command = edited_df.loc[edited_df["rating"].idxmax()]["command"]
 st.markdown(f"Your favorite command is **{favorite_command}** 🎈")
 
 chart_data = pd.DataFrame(
-   {"Variatia precipitatii per locatie": list(range(20)), favorite_command: np.random.randn(20), "Balasan": np.random.randn(20)}
+   {"Variatia precipitatii per locatie": list(range(20)), favorite_command: np.random.randn(20), favorite_command1: np.random.randn(20)}
 )
 
 # Utilizați o diagramă cu bare grouped pentru a compara comanda favorită și "Balasan" pe fiecare locație
