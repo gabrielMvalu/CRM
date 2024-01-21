@@ -1,6 +1,7 @@
 import streamlit as st
 from PIL import Image
 import os
+import pandas as pd
 
 # Sidebar for uploading and displaying logo and text
 st.sidebar.title("CRM Predictii Oras Bailesti")
