@@ -22,20 +22,16 @@ else:
 
 st.sidebar.markdown("<small>© Castemill S.R.L.</small>", unsafe_allow_html=True)
 
-# Sample dataframe
 df = pd.DataFrame(
-    {
-        "command": ["st.selectbox", "st.balloons", "st.time_input"],
-        "rating": [4, 5, 3],
-        "is_widget": [True, False, True]
-    }
+    [
+       {"command": "st.selectbox", "rating": 4, "is_widget": True},
+       {"command": "st.balloons", "rating": 5, "is_widget": False},
+       {"command": "st.time_input", "rating": 3, "is_widget": True},
+   ]
 )
+edited_df = st.data_editor(df, num_rows="dynamic")
 
-# Display the dataframe
-st.dataframe(df, num_rows="dynamic")
-# Finding the command with the highest rating
-favorite_command = df.loc[df["rating"].idxmax()]["command"]
-
+favorite_command = edited_df.loc[edited_df["rating"].idxmax()]["command"]
 st.markdown(f"Your favorite command is **{favorite_command}** 🎈")
 
 
