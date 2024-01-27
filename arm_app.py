@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np
 import pydeck as pdk
 
-col1, col2 = st.columns([10, 20])
+col1, col2 = st.columns(2)
 with col1:
    chart_data = pd.DataFrame(
       np.random.randn(10, 2) / [50, 50] + [44.02, 23.34],
