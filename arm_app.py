@@ -108,7 +108,7 @@ with col2:
         }
       }
 
-
+   )
 
 
 def read_docx(file):
