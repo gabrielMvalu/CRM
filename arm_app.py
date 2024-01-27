@@ -6,7 +6,7 @@ import numpy as np
 import pydeck as pdk
 
 chart_data = pd.DataFrame(
-   np.random.randn(100, 2) / [50, 50] + [44.02, 23.34],
+   np.random.randn(10, 2) / [50, 50] + [44.02, 23.34],
    columns=['lat', 'lon'])
 
 st.pydeck_chart(pdk.Deck(
