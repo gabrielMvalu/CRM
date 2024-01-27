@@ -6,13 +6,15 @@ import numpy as np
 import pydeck as pdk
 
 
+st.sidebar.title("Încărcare Document")
+uploaded_file = st.sidebar.file_uploader("Alege un fișier .docx", type="docx")
+
 def read_docx(file):
       doc = Document(file)
       paragraphs = [para.text for para in doc.paragraphs if para.text.strip() != '']
       return paragraphs
   
-  st.sidebar.title("Încărcare Document")
-  uploaded_file = st.sidebar.file_uploader("Alege un fișier .docx", type="docx")
+
   
   if uploaded_file is not None:
       # Încarcă și prelucrează documentul o singură dată
