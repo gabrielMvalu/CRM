@@ -5,16 +5,6 @@ import pandas as pd
 import numpy as np
 import pydeck as pdk
 
-sac.chip(
-    items=[
-        sac.ChipItem(label='apple'),
-        sac.ChipItem(icon='google'),
-        sac.ChipItem(label='github', icon='github'),
-        sac.ChipItem(label='twitter', icon='twitter'),
-        sac.ChipItem(label='disabled', disabled=True),
-    ], label='label', index=[0, 2], align='center', radius='md', multiple=True
-)
-
 st.sidebar.title("Încărcare Document")
 uploaded_file = st.sidebar.file_uploader("Alege un fișier .docx", type="docx")
 
