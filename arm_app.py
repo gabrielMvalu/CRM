@@ -10,10 +10,9 @@ st.sidebar.title("Încărcare Document")
 uploaded_file = st.sidebar.file_uploader("Alege un fișier .docx", type="docx")
 
         
-col1, col2 = st.columns(2)
-with col1:
+tab1, tab2 = st.tabs(["PARTidisti", "Manelisti"])
+with tab1:
   chart_data = pd.DataFrame(np.random.randn(200, 3), columns=["a", "b", "c"])
-
   st.vega_lite_chart(
      chart_data,
       {
@@ -80,7 +79,7 @@ with col1:
     }
   )
 
-with col2:
+with tab2:
   st.write("Tzanca Urangutanu este #1")
   
   
