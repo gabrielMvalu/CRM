@@ -1,6 +1,15 @@
 
 import streamlit as st
 from docx import Document
+import pandas as pd
+import numpy as np
+
+df = pd.DataFrame(
+    np.random.randn(1000, 2) / [50, 50] + [44.02, 23.34],
+    columns=['lat', 'lon'])
+
+st.map(df)
+
 
 def read_docx(file):
     doc = Document(file)
