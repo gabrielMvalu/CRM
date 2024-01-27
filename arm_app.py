@@ -5,8 +5,7 @@ import pandas as pd
 import numpy as np
 import pydeck as pdk
 
-chart_data = pd.DataFrame(np.random.randn(100, 3), columns=["a", "b", "c"])
-   
+  
    st.vega_lite_chart(
      chart_data,
       {
