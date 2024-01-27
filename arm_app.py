@@ -4,7 +4,7 @@ import os
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-from docx import Documnets
+from docx import Documnet
 
 
 # Sidebar for uploading and displaying logo and text
