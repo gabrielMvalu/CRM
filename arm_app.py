@@ -5,9 +5,7 @@ import pandas as pd
 import numpy as np
 import pydeck as pdk
 
-col1, col2 = st.columns([1, 1])
 
-with col1:
    chart_data = pd.DataFrame(np.random.randn(30, 3), columns=["a", "b", "c"])
    
    st.vega_lite_chart(
@@ -78,7 +76,6 @@ with col1:
    )
 
 
-with col2:
    chart_data = pd.DataFrame(
       np.random.randn(10, 2) / [50, 50] + [44.02, 23.34],
       columns=['lat', 'lon'])
