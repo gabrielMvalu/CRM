@@ -5,6 +5,13 @@ import pandas as pd
 import numpy as np
 import pydeck as pdk
 
+import React from 'react';
+import { FloatButton } from 'antd';
+
+const App: React.FC = () => <FloatButton onClick={() => console.log('onClick')} />;
+
+export default App;
+
 
 st.sidebar.title("Încărcare Document")
 uploaded_file = st.sidebar.file_uploader("Alege un fișier .docx", type="docx")
