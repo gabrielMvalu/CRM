@@ -100,8 +100,8 @@ with col2:
         ],
         "mark": {"type": "text", "baseline": "middle"},
         "encoding": {
-          "x": {"field": "rank", "type": "ordinal", "axis": null},
-          "y": {"field": "animal", "type": "nominal", "axis": null, "sort": null},
+          "x": {"field": "rank", "type": "ordinal"},
+          "y": {"field": "animal", "type": "nominal"},
           "row": {"field": "country", "header": {"title": ""}},
           "text": {"field": "emoji", "type": "nominal"},
           "size": {"value": 65}
