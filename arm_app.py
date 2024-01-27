@@ -5,8 +5,6 @@ import pandas as pd
 import numpy as np
 import pydeck as pdk
 
-import streamlit_antd_components as sac
-
 sac.chip(
     items=[
         sac.ChipItem(label='apple'),
