@@ -46,7 +46,7 @@ with col2:
    st.vega_lite_chart(
       chart_data,
       {
-          "mark": {"type": "circle", "tooltip": True},
+          "mark": {"type": "circle", "tooltip": False},
           "encoding": {
               "x": {"field": "a", "type": "quantitative"},
               "y": {"field": "b", "type": "quantitative"},
