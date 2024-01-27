@@ -18,7 +18,7 @@ if uploaded_file is not None:
         st.session_state.uploaded_file = uploaded_file
 
     for i, original_text in enumerate(st.session_state.paragraphs):
-        col1, col2, col3 = st.columns([1, 20, 1])
+        col1, col2, col3 = st.columns([1, 20, 3])
         with col1:
             st.markdown(st.session_state.paragraph_states[i], unsafe_allow_html=True)
         with col2:
