@@ -13,20 +13,22 @@ uploaded_file = st.sidebar.file_uploader("Alege un fișier .docx", type="docx")
 
 if uploaded_file is not None:
     paragraphs = read_docx(uploaded_file)
-    original_paragraphs = paragraphs.copy()
-    states = ['🔴' for _ in paragraphs]  # Inițializează toți indicatorii ca roșii
-
+    
+    # Inițializează starea pentru fiecare paragraf dacă nu există deja în session_state
+    for i, _ in enumerate(paragraphs):
+        if f'para_{i}_state' not in st.session_state:
+            st.session_state[f'para_{i}_state'] = '🔴'  # Stare inițială roșie
+    
     for i, paragraph in enumerate(paragraphs):
         col1, col2 = st.columns([1, 20])
         with col1:
-            st.markdown(states[i], unsafe_allow_html=True)
+            # Afisează indicatorul pentru fiecare paragraf
+            st.markdown(st.session_state[f'para_{i}_state'], unsafe_allow_html=True)
         with col2:
+            # Folosește un key unic pentru fiecare text_area pentru a putea detecta modificările
             updated_text = st.text_area(f"Paragraful {i+1}", value=paragraph, height=100, key=f"para_{i}")
-        
-        if updated_text != original_paragraphs[i]:
-            states[i] = '🔵'  # Schimbă indicatorul în albastru dacă textul a fost modificat
-        if st.session_state.get(f"para_{i}"):
-            states[i] = '🟢'  # Schimbă indicatorul în verde dacă paragraful este selectat pentru modificare
+            if st.session_state[f'para_{i}'] != paragraph:
+                st.session_state[f'para_{i}_state'] = '🔵'  # Schimbă în albastru dacă textul a fost modificat
 
 else:
     st.write("Vă rugăm să încărcați un document .docx în meniul din stânga.")
